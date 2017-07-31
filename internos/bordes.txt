@@ -1,0 +1,3 @@
+titulo -> 7
+jornadas -> 6
+fecha -> 5
