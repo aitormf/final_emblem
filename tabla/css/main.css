@@ -13,3 +13,9 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+#contenedor_tabla {
+	width: 1280px;
+	height: 720px;
+	background-image: url(../img/VS5.png);
+}
