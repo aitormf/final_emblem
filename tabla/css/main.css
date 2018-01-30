@@ -15,7 +15,52 @@ tr:nth-child(even) {
 }
 
 #contenedor_tabla {
-	width: 1280px;
-	height: 720px;
-	background-image: url(../img/VS5.png);
+	width: 1246px;
+	height: 716px;
+	background-image: url(../img/background.png);
+    padding: 2px 17px 2px 17px
+}
+
+#local {
+    background-image: url(../img/text-local-bg.png);
+    top: 95px;
+    position: absolute;
+}
+
+#visitante {
+    background-image: url(../img/text-visit-bg.png);
+    top: 95px;
+    left: 766px;
+    position: absolute;
+}
+
+#competicion {
+    background-image: url(../img/vs.png);
+    width: 206px;
+    height: 177px;
+    /*margin-left: 17px;
+    margin-right: 17px;*/
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+#nombres {
+    height: 170px;
+}
+
+.heigth-66{
+    height: 66px;
+}
+
+.width-502{
+    width: 502px;
+}
+
+.col{
+    position: relative;
+    display: inline-block;
+}
+
+.fila{
+    width: 100%;
 }
