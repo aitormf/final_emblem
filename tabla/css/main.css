@@ -21,13 +21,13 @@ tr:nth-child(even) {
     padding: 2px 17px 2px 17px
 }
 
-#local {
+#equipoLocal {
     background-image: url(../img/text-local-bg.png);
     top: 95px;
     position: absolute;
 }
 
-#visitante {
+#equipoVisitante {
     background-image: url(../img/text-visit-bg.png);
     top: 95px;
     left: 766px;
@@ -35,9 +35,10 @@ tr:nth-child(even) {
 }
 
 #competicion {
-    background-image: url(../img/vs.png);
-    width: 206px;
-    height: 177px;
+    background-image: url(../img/vs2.png);
+    background-repeat: no-repeat;
+    width: 193px;
+    height: 151px;
     /*margin-left: 17px;
     margin-right: 17px;*/
     left: 50%;
@@ -45,7 +46,7 @@ tr:nth-child(even) {
 }
 
 #nombres {
-    height: 170px;
+    height: 155px;
 }
 
 .heigth-66{
@@ -63,4 +64,67 @@ tr:nth-child(even) {
 
 .fila{
     width: 100%;
+}
+
+.jugador{
+     height: 71px;
+     width: 459px;
+}
+.jugadores{
+    height: 71px;
+}
+
+.jugadorLocal{
+    background-image: url(../img/local2.png);
+    background-repeat: no-repeat;
+    margin-left: 130px;
+    margin-right: 50px;
+
+}
+
+
+.jugadorVisitante{
+    background-image: url(../img/visit2.png);
+    background-repeat: no-repeat;
+    
+}
+
+.penalizaciones{
+    height: 59px;
+}
+.penalizacion{
+    height: 59px;
+     width: 381px;
+}
+.penalizacionLocal{
+    background-image: url(../img/pena_local.png);
+    background-repeat: no-repeat;
+    margin-left: 122px;
+    margin-right: 220px;
+
+}
+
+.penalizacionVisitante{
+    background-image: url(../img/pena_visit.png);
+    background-repeat: no-repeat;
+}
+
+.totales{
+    height: 59px;
+}
+.total{
+    height: 71px;
+     width: 469px;
+}
+.totalLocal{
+    background-image: url(../img/total_local.png);
+    background-repeat: no-repeat;
+    margin-left: 118px;
+    margin-right: 52px;
+
+}
+
+.totalVisitante{
+    background-image: url(../img/total_visit.png);
+    background-repeat: no-repeat;
 }
