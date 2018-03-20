@@ -3,6 +3,11 @@
     src: url(Mario_Kart_70.ttf);
 }
 
+@font-face {
+    font-family: Digital;
+    src: url(digital-7.ttf);
+}
+
 #contenedor_tabla {
 	width: 1246px;
 	height: 716px;
@@ -75,6 +80,11 @@
 .col{
     position: relative;
     display: inline-block;
+    vertical-align: top;
+}
+
+.vertical-top{
+    vertical-align: top;
 }
 
 .fila{
@@ -86,9 +96,11 @@
      width: 459px;
 }
 
+
 .numero{
-    font-family: MarioKart;
-    font-size: 15px;
+    font-family: Digital;
+    font-size: 87px;
+    color: white;
 }
 
 .jugadores{
@@ -105,9 +117,37 @@
 
 .jugadorLocal .numero{
     height: 100%;
-    position: relative;
-    top:0;
+    text-align: right;
+    padding-left: 10px;
+    width: 10%;
 
+
+}
+
+.nombre{
+    padding-top: 20px;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+}
+
+.jugadorLocal .nombre{
+    height: 100%;
+    padding-left: 35px;
+    width: 57%;
+
+}
+.jugadorLocal .puntos{
+    width: 20%;
+    height: 100%;
+    text-align: right;
+}
+
+.puntos{
+    padding-top: 4px;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
 }
 
 
