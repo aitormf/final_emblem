@@ -1,17 +1,6 @@
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
+@font-face {
+    font-family: MarioKart;
+    src: url(Mario_Kart_70.ttf);
 }
 
 #contenedor_tabla {
@@ -27,11 +16,37 @@ tr:nth-child(even) {
     position: absolute;
 }
 
+#escudoLocal{
+    top: -65px;
+    position: absolute;
+}
+
+#equipoLocal .nombreEquipo{
+    margin-left: 160px;
+}
+.nombreEquipo{
+    font-size: 30px;
+    color: white;
+    padding-top: 15px;
+
+}
+
 #equipoVisitante {
     background-image: url(../img/text-visit-bg.png);
     top: 95px;
     left: 766px;
     position: absolute;
+}
+#equipoVisitante .nombreEquipo{
+    width: 380px;
+    padding-left: 15px;
+    /*font-size: 27px;*/
+}
+
+#escudoVisitante{
+    top: -65px;
+    position: absolute;
+    margin-left: 350px;
 }
 
 #competicion {
@@ -70,6 +85,12 @@ tr:nth-child(even) {
      height: 71px;
      width: 459px;
 }
+
+.numero{
+    font-family: MarioKart;
+    font-size: 15px;
+}
+
 .jugadores{
     height: 71px;
 }
@@ -79,6 +100,13 @@ tr:nth-child(even) {
     background-repeat: no-repeat;
     margin-left: 130px;
     margin-right: 50px;
+
+}
+
+.jugadorLocal .numero{
+    height: 100%;
+    position: relative;
+    top:0;
 
 }
 
