@@ -144,7 +144,7 @@
 }
 
 .puntos{
-    padding-top: 4px;
+    padding-top: 20px;
     font-size: 25px;
     color: white;
     font-weight: bold;
@@ -156,6 +156,29 @@
     background-repeat: no-repeat;
     
 }
+
+.jugadorVisitante .puntos{
+    width: 20%;
+    height: 100%;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.jugadorVisitante .numero{
+    height: 100%;
+    text-align: right;
+    width: 10%;
+}
+
+.jugadorVisitante .nombre{
+    height: 100%;
+    padding-right: 35px;
+    width: 57%;
+    text-align: right;
+
+}
+
+
 
 .penalizaciones{
     height: 59px;
@@ -172,10 +195,53 @@
 
 }
 
+.penalizacion_nombre{
+    font-family: arial;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    padding-top: 15px;
+}
+
+.penalizacion_puntos{
+    font-size: 26px;
+    color: white;
+    font-weight: bold;
+    padding-top: 15px;
+}
+
+.penalizacionLocal .penalizacion_nombre{
+    padding-left: 15px;
+    width: 70%
+
+}
+
+.penalizacionLocal .penalizacion_puntos{
+    width: 23%;
+    text-align: right;
+
+}
+
 .penalizacionVisitante{
     background-image: url(../img/pena_visit.png);
     background-repeat: no-repeat;
 }
+
+.penalizacionVisitante .penalizacion_nombre{
+    padding-left: 1px;
+    width: 70%;
+    text-align: right;
+
+
+}
+
+.penalizacionVisitante .penalizacion_puntos{
+    width: 23%;
+    text-align: left;
+    padding-left: 15px;
+
+}
+
 
 .totales{
     height: 59px;
@@ -195,4 +261,44 @@
 .totalVisitante{
     background-image: url(../img/total_visit.png);
     background-repeat: no-repeat;
+}
+
+.total_nombre{
+    font-family: arial;
+    font-size: 63px;
+    color: white;
+    font-weight: bold;
+    
+}
+
+.totalLocal .total_nombre{
+    padding-left: 50px;
+    width: 60%;
+
+}
+
+.total_puntos{
+    padding-top: 9px;
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+    
+    
+}
+
+.totalLocal .total_puntos{
+   text-align: right;
+   width: 26%;
+
+}
+
+.totalVisitante .total_puntos{
+   padding-left: 15px;
+   width: 26%;
+
+}
+
+.totalVisitante .total_nombre{
+    width: 60%;
+    text-align: right;
 }
