@@ -5,12 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tablas Final Emblem</title>
   <meta name="description" content="">
+  
 
    <!-- core CSS -->
-  <link href="css/main.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
-<div id="contenedor_tabla" class="container rounded-17">
+
+<div id="contenedor_tabla" class="container rounded-17 tablita">
   <!-- Nombres -->
   <div class="fila" id="nombres">
   	<div id="equipoLocal" class="heigth-66 width-502 col">
@@ -64,6 +67,117 @@
 
 </div>
 
+<div id="body" class="container">
+	<div class="row">
+	      <div id="buttons" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	         <p>
+	            <button id="stop" type="button" class="btn btn-md btn-danger">Descargar</button>
+	            <button id="config" type="button" class="btn btn-info" data-toggle="modal" data-target="#configure">Configurar</button>
+	         </p>
+	      </div>
+	   </div>
+	</div>
 
+<div class="w3-modal" id="configure">
+  <div class="w3-modal-content" >
+      <header class="w3-container w3-purple"> 
+      	<span onclick="document.getElementById('configure').style.display='none'" 
+        class="w3-button w3-display-topright">&times;</span>
+        <h2 class="modal-title" id="configLabel">Datos de la Tabla</h2>
+      </header>
+      <div class="w3-container">
+      	<h3> Competición </h3>
+      	<input  id="competicionNombre" type="text" placeholder="Nombre"></td>
+      	<h3> Equipo Local </h3>
+      	<input  id="localNombre" type="text" placeholder="Nombre"></td>
+       <table style="width:100%">
+				  <tr>
+				    <td class = "col-5">1</td>
+				    <td class="col-95"><input  id="local1Nombre" type="text" placeholder="Nombre"></td>
+				    <td class = "col-5"></td>
+				    <td class="col-95"><input  id="local1Puntos" type="number"  placeholder="Puntos"></td>
+				  </tr>
+				  <tr>
+				    <td class = "col-5">2</td>
+				    <td class="col-95"><input  id="local2Nombre" type="text" placeholder="Nombre"></td>
+				    <td class = "col-5"></td>
+				    <td class="col-95"><input  id="local2Puntos" type="number"  placeholder="Puntos"></td>
+				  </tr>
+				  <tr>
+				    <td class = "col-5">3</td>
+				    <td class="col-95"><input  id="local3Nombre" type="text" placeholder="Nombre"></td>
+				    <td class = "col-5"></td>
+				    <td class="col-95"><input  id="local3Puntos" type="number"  placeholder="Puntos"></td>
+				  </tr>
+				  <tr>
+				    <td class = "col-5">4</td>
+				    <td class="col-95"><input  id="local4Nombre" type="text" placeholder="Nombre"></td>
+				    <td class = "col-5"></td>
+				    <td class="col-95"><input  id="local4Puntos" type="number"  placeholder="Puntos"></td>
+				  </tr>
+				  <tr>
+				    <td class = "col-5">5</td>
+				    <td class="col-95"><input  id="local5Nombre" type="text" placeholder="Nombre"></td>
+				    <td class = "col-5"></td>
+				    <td class="col-95"><input  id="local5Puntos" type="number"  placeholder="Puntos"></td>
+				  </tr>
+				  <tr>
+				    <td class = "col-5">6</td>
+				    <td class="col-95"><input  id="local6Nombre" type="text" placeholder="Nombre"></td>
+				    <td class = "col-5"></td>
+				    <td class="col-95"><input  id="local6Puntos" type="number"  placeholder="Puntos"></td>
+				  </tr>
+				</table>
+
+				<h3> Equipo Visitante </h3>
+				<input  id="visitanteNombre" type="text" placeholder="Nombre"></td>
+       <table style="width:100%">
+				  <tr>
+				    <td class = "col-5">1</td>
+				    <td class="col-95"><input  id="visitante1Nombre" type="text" placeholder="Nombre"></td>
+				    <td class = "col-5"></td>
+				    <td class="col-95"><input  id="visitante1Puntos" type="number"  placeholder="Puntos"></td>
+				  </tr>
+				  <tr>
+				    <td class = "col-5">2</td>
+				    <td class="col-95"><input  id="visitante2Nombre" type="text" placeholder="Nombre"></td>
+				    <td class = "col-5"></td>
+				    <td class="col-95"><input  id="visitante2Puntos" type="number"  placeholder="Puntos"></td>
+				  </tr>
+				  <tr>
+				    <td class = "col-5">3</td>
+				    <td class="col-95"><input  id="visitante3Nombre" type="text" placeholder="Nombre"></td>
+				    <td class = "col-5"></td>
+				    <td class="col-95"><input  id="visitante3Puntos" type="number"  placeholder="Puntos"></td>
+				  </tr>
+				  <tr>
+				    <td class = "col-5">4</td>
+				    <td class="col-95"><input  id="visitante4Nombre" type="text" placeholder="Nombre"></td>
+				    <td class = "col-5"></td>
+				    <td class="col-95"><input  id="visitante4Puntos" type="number"  placeholder="Puntos"></td>
+				  </tr>
+				  <tr>
+				    <td class = "col-5">5</td>
+				    <td class="col-95"><input  id="visitante5Nombre" type="text" placeholder="Nombre"></td>
+				    <td class = "col-5"></td>
+				    <td class="col-95"><input  id="visitante5Puntos" type="number"  placeholder="Puntos"></td>
+				  </tr>
+				  <tr>
+				    <td class = "col-5">6</td>
+				    <td class="col-95"><input  id="visitante6Nombre" type="text" placeholder="Nombre"></td>
+				    <td class = "col-5"></td>
+				    <td class="col-95"><input  id="visitante6Puntos" type="number"  placeholder="Puntos"></td>
+				  </tr>
+				</table>
+      </div>
+      <footer class="w3-container w3-purple">
+        <button id="save">Guardar</button>
+      </footer>
+ 	</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<script src="js/main.js"></script>
 </body>
 </html>

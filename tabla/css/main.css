@@ -8,8 +8,15 @@
     src: url(digital-7.ttf);
 }
 
+.tablita::before, .tablita::after {
+    box-sizing: content-box;
+}
+html, body{
+    line-height: normal;
+}
+
 #contenedor_tabla {
-	width: 1246px;
+	width: 1280px;
 	height: 716px;
 	background-image: url(../img/background.png);
     padding: 2px 17px 2px 17px
@@ -134,7 +141,7 @@
 .jugadorLocal .nombre{
     height: 100%;
     padding-left: 35px;
-    width: 57%;
+    width: 66%;
 
 }
 .jugadorLocal .puntos{
@@ -173,7 +180,7 @@
 .jugadorVisitante .nombre{
     height: 100%;
     padding-right: 35px;
-    width: 57%;
+    width: 68%;
     text-align: right;
 
 }
@@ -212,7 +219,7 @@
 
 .penalizacionLocal .penalizacion_nombre{
     padding-left: 15px;
-    width: 70%
+    width: 73%
 
 }
 
@@ -229,7 +236,7 @@
 
 .penalizacionVisitante .penalizacion_nombre{
     padding-left: 1px;
-    width: 70%;
+    width: 74%;
     text-align: right;
 
 
@@ -273,7 +280,7 @@
 
 .totalLocal .total_nombre{
     padding-left: 50px;
-    width: 60%;
+    width: 70%;
 
 }
 
@@ -299,6 +306,131 @@
 }
 
 .totalVisitante .total_nombre{
-    width: 60%;
+    width: 64%;
     text-align: right;
+}
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+input[type=text], input[type=number], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-5 {
+    
+    width: 5%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+.col-50 {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+}
+
+.col-45 {
+    float: left;
+    width: 45%;
+    margin-top: 6px;
+}
+
+.col-95 {
+    float: left;
+    width: 95%;
+    margin-top: 6px;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+.w3-modal > .w3-modal-content > .w3-container > p {
+  word-wrap: break-word;
 }
