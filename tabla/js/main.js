@@ -23,7 +23,7 @@ window.onclick = function(event) {
 var equipos = [
 	{"id":"FE1", "logo":"final_emblem_ifrit.png"},
 	{"id":"FE2", "logo":"final_emblem_seraphim.png"}
-]
+];
 
 
 
@@ -35,7 +35,12 @@ var equipos = [
 
 
 
+var crearEquipos = function(){
+	for(i=0; i< equipos.length; i++){
 
+		$( ".idEquipos" ).append( '<option value="'+i+'">'+equipos[i].id+'</option>' );
+	}
+}
 
 
 
@@ -86,6 +91,8 @@ var setJugadores = function (jugadores, prefix){
 
 
 $(document).ready(function(){
+
+	crearEquipos()
     $("#save").click (function (event) {
     	var jugadores = getTabJugadores();
 
