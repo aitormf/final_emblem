@@ -61,8 +61,7 @@ function downloadCanvas(canvasId, filename) {
     var domElement = document.getElementById(canvasId);
  
     // Utilizando la función html2canvas para hacer la conversión
-    html2canvas(domElement, {
-        onrendered: function(domElementCanvas) {
+    html2canvas(domElement).then(function(domElementCanvas) {
             // Obteniendo el contexto del canvas ya generado
             var context = domElementCanvas.getContext('2d');
  
@@ -85,7 +84,7 @@ function downloadCanvas(canvasId, filename) {
                 link.click();
             }
         }
-    });
+  	);
 }
 
 
