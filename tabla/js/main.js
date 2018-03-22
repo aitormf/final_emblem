@@ -19,28 +19,88 @@ window.onclick = function(event) {
     }
 }
 
-var getJugadores = function (){
-	var jugadores = {};
-	jugadores.locales = [{}];
-	jugadores.visitantes = [{}];
+
+var equipos = [
+	{"id":"FE1", "logo":"final_emblem_ifrit.png"},
+	{"id":"FE2", "logo":"final_emblem_seraphim.png"}
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var getJugadores = function(prefix){
+	jugadores = [{}];
+	jugadores[0].puntos = $(prefix+"Penalizacion").val();
 	for (i = 1; i < 7; i++) {
-		idNombre = "local"+i+"Nombre"
-		idPuntos = "local"+i+"Puntos"
+		idNombre = prefix+i+"Nombre"
+		idPuntos = prefix+i+"Puntos"
 		nombre = $(idNombre).val();
 		puntos = $(idPuntos).val();
-    	jugadores.locales[i]={"nombre":nombre,"puntos":puntos};
-	} 
-	console.log(jugadores);
+    	jugadores[i]={"nombre":nombre,"puntos":puntos};
+	}
+	return jugadores;
 
+}
+
+var getTabJugadores = function (){
+	var jugadores = {};
+	jugadores.locales = getJugadores("#local");
+	jugadores.visitantes = getJugadores("#visitante");
+	 
+	console.log(jugadores);
+	return jugadores;
+
+}
+
+var calcTotal = function(jugadores){
+	var total = 0;
+	for (i=0; i < jugadores.length; i++){
+		if (jugadores[i].puntos != ""){
+			total += parseInt(jugadores[i].puntos);
+		}
+	}
+	return total
+}
+
+var setJugadores = function (jugadores, prefix){
+	$("#penalizacionPuntos"+prefix).html(jugadores[0].puntos);
+	for (i=1; i < jugadores.length; i++){
+		idNombre = "#jugador"+i+prefix+ " .nombre";
+		idpuntos = "#jugador"+i+prefix+ " .puntos";
+		$(idNombre).html(jugadores[i].nombre);
+		$(idpuntos).html(jugadores[i].puntos);
+	}
 }
 
 
 $(document).ready(function(){
-	console.log("aaaa");
     $("#save").click (function (event) {
-    	console.log("aaaa");
-    	equipo = $("#localNombre").val();
-    	console.log(equipo);
-    	$("#nombreLocal").html(equipo);
+    	var jugadores = getTabJugadores();
+
+    	var totalLocal = calcTotal(jugadores.locales);
+    	var totalVisitante = calcTotal(jugadores.visitantes);
+
+    	setJugadores(jugadores.locales, "Local");
+    	setJugadores(jugadores.visitantes, "Visitante");
+    	
+    	$("#totalPuntosLocal").html(totalLocal);
+    	$("#totalPuntosVisitante").html(totalVisitante);
+
+
+
+    	modal.style.display = "none";
+
     });
 });

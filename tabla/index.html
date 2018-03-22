@@ -61,7 +61,7 @@
   </div>
   <!-- total -->
   <div class="fila jugadores" id="totales">
-  	<div id="totalLocal" class="totalLocal total col"><div class="total_nombre col">TOTAL</div><div id="totalPuntosLocal" class="col total_puntos">500</div></div><div id="totalVisitante" class="totalVisitante total col"><div id="totalPuntosLocal" class="col total_puntos">500</div><div class="total_nombre col">TOTAL</div></div>
+  	<div id="totalLocal" class="totalLocal total col"><div class="total_nombre col">TOTAL</div><div id="totalPuntosLocal" class="col total_puntos">500</div></div><div id="totalVisitante" class="totalVisitante total col"><div id="totalPuntosVisitante" class="col total_puntos">500</div><div class="total_nombre col">TOTAL</div></div>
   </div>
 
 
@@ -87,9 +87,9 @@
       </header>
       <div class="w3-container">
       	<h3> Competición </h3>
-      	<input  id="competicionNombre" type="text" placeholder="Nombre"></td>
+      	<input  id="competicionNombre" type="text" placeholder="Nombre">
       	<h3> Equipo Local </h3>
-      	<input  id="localNombre" type="text" placeholder="Nombre"></td>
+      	<input  id="localNombre" type="text" placeholder="Nombre">
        <table style="width:100%">
 				  <tr>
 				    <td class = "col-5">1</td>
@@ -128,9 +128,10 @@
 				    <td class="col-95"><input  id="local6Puntos" type="number"  placeholder="Puntos"></td>
 				  </tr>
 				</table>
+				<input  id="localPenalizacion" type="number" placeholder="Penalización">
 
 				<h3> Equipo Visitante </h3>
-				<input  id="visitanteNombre" type="text" placeholder="Nombre"></td>
+				<input  id="visitanteNombre" type="text" placeholder="Nombre">
        <table style="width:100%">
 				  <tr>
 				    <td class = "col-5">1</td>
@@ -169,6 +170,7 @@
 				    <td class="col-95"><input  id="visitante6Puntos" type="number"  placeholder="Puntos"></td>
 				  </tr>
 				</table>
+				<input  id="visitantePenalizacion" type="number" placeholder="Penalización">
       </div>
       <footer class="w3-container w3-purple">
         <button id="save">Guardar</button>
