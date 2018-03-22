@@ -20,9 +20,15 @@ window.onclick = function(event) {
 }
 
 
+var competiciones = [
+	{"id":"Amistosa", "nombre": "Amistosa","logo":"vs.png"},
+	{"id":"MKU", "nombre": "MKU", "logo":"universal.png"},
+	{"id":"SNL", "nombre": "SNL", "logo":"snl.png"}
+];
+
 var equipos = [
-	{"id":"FE1", "logo":"final_emblem_ifrit.png"},
-	{"id":"FE2", "logo":"final_emblem_seraphim.png"}
+	{"id":"FE1", "nombre": "Final Emblem Ifrit","logo":"final_emblem_ifrit.png"},
+	{"id":"FE2", "nombre": "Final Emblem Seraphim", "logo":"final_emblem_seraphim.png"}
 ];
 
 
@@ -39,6 +45,13 @@ var crearEquipos = function(){
 	for(i=0; i< equipos.length; i++){
 
 		$( ".idEquipos" ).append( '<option value="'+i+'">'+equipos[i].id+'</option>' );
+	}
+}
+
+var crearCompeticiones = function(){
+	for(i=0; i< competiciones.length; i++){
+
+		$( "#competicionNombre" ).append( '<option value="'+i+'">'+competiciones[i].id+'</option>' );
 	}
 }
 
@@ -64,7 +77,6 @@ var getTabJugadores = function (){
 	jugadores.locales = getJugadores("#local");
 	jugadores.visitantes = getJugadores("#visitante");
 	 
-	console.log(jugadores);
 	return jugadores;
 
 }
@@ -89,10 +101,16 @@ var setJugadores = function (jugadores, prefix){
 	}
 }
 
+var setEquipo= function(equipo, prefix){
+	$("#nombre"+prefix).html(equipo.nombre);
+	$("#escudo"+prefix+" img").attr("src", "img/equipos/"+equipo.logo);
+}
+
 
 $(document).ready(function(){
 
-	crearEquipos()
+	crearEquipos();
+	crearCompeticiones();
     $("#save").click (function (event) {
     	var jugadores = getTabJugadores();
 
@@ -105,6 +123,11 @@ $(document).ready(function(){
     	$("#totalPuntosLocal").html(totalLocal);
     	$("#totalPuntosVisitante").html(totalVisitante);
 
+    	var equipoLocal = equipos[parseInt($("#localNombre").val())];
+    	setEquipo(equipoLocal, "Local");
+
+    	var equipoVisitante = equipos[parseInt($("#visitanteNombre").val())];
+    	setEquipo(equipoVisitante, "Visitante");
 
 
     	modal.style.display = "none";
