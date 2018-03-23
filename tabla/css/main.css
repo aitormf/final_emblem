@@ -19,7 +19,8 @@ html, body{
 	width: 1280px;
 	height: 716px;
 	background-image: url(../img/background.png);
-    padding: 2px 17px 2px 17px
+    padding: 2px 17px 2px 17px;
+    background-color:transparent;
 }
 
 #web{
@@ -464,7 +465,7 @@ input[type=submit]:hover {
 }
 
 .perdedor{
-    color: orange;
+    color: red;
 }
 
 .w3-modal-content {

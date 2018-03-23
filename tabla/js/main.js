@@ -40,6 +40,7 @@ var equipos = [
 	{"id":"MT", "nombre": "Mushroom Team", "logo":"mtx.png", "size":"30px", "padding":"15px"},
 	{"id":"MT1", "nombre": "Mushroom Team X", "logo":"mtx.png", "size":"30px", "padding":"15px"},
 	{"id":"MT2", "nombre": "Mushroom Team Y", "logo":"mty.png", "size":"30px", "padding":"15px"},
+	{"id":"N", "nombre": "Nightmare", "logo":"Nightmare.png", "size":"30px", "padding":"15px"},
 	{"id":"OB", "nombre": "Obvious Brilliance", "logo":"ob.png", "size":"30px", "padding":"15px"},
 	{"id":"RF", "nombre": "Rainbow Fun", "logo":"rf.png", "size":"30px", "padding":"15px"},
 	{"id":"RK", "nombre": "Rozando la Katastrofe", "logo":"rk.png", "size":"29px", "padding":"16px"},
@@ -50,6 +51,9 @@ var equipos = [
 	{"id":"STC", "nombre": "Souls of the Circuit", "logo":"stc.png", "size":"30px", "padding":"15px"},
 	{"id":"TT", "nombre": "Tuéstame la tostada", "logo":"tt.png", "size":"30px", "padding":"15px"},
 	{"id":"UU", "nombre": "Unbeatable Underdogs", "logo":"uu.png", "size":"27px", "padding":"18px"},
+	{"id":"VR", "nombre": "Victory Racers", "logo":"VR1.png", "size":"30px", "padding":"15px"},
+	{"id":"VR1", "nombre": "Victory Racers Esmerald", "logo":"VR1.png", "size":"27px", "padding":"18px"},
+	{"id":"VR2", "nombre": "Victory Racers Sapphire", "logo":"VR2.png", "size":"27px", "padding":"18px"},
 	{"id":"WEC", "nombre": "Wii Elite Clan", "logo":"wec.png", "size":"30px", "padding":"15px"},
 	{"id":"YF", "nombre": "Yoshi Family", "logo":"yoshi_family.png", "size":"30px", "padding":"15px"},
 ];
