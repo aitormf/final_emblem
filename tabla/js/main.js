@@ -42,7 +42,7 @@ var equipos = [
 	{"id":"MT2", "nombre": "Mushroom Team Y", "logo":"mty.png", "size":"30px", "padding":"15px"},
 	{"id":"OB", "nombre": "Obvious Brilliance", "logo":"ob.png", "size":"30px", "padding":"15px"},
 	{"id":"RF", "nombre": "Rainbow Fun", "logo":"rf.png", "size":"30px", "padding":"15px"},
-	{"id":"RK", "nombre": "Rozando la Katastrofe", "logo":"rk.png", "size":"30px", "padding":"15px"},
+	{"id":"RK", "nombre": "Rozando la Katastrofe", "logo":"rk.png", "size":"29px", "padding":"16px"},
 	{"id":"RK2", "nombre": "Rozando la Kalamidad", "logo":"rk.png", "size":"30px", "padding":"15px"},
 	{"id":"RK3", "nombre": "Rozando el Kataclismo", "logo":"rk.png", "size":"29px", "padding":"16px"},
 	{"id":"SH", "nombre": "Shells From Hell", "logo":"sh.png", "size":"30px", "padding":"15px"},
@@ -182,11 +182,29 @@ $(document).ready(function(){
     	$("#totalPuntosLocal").html(totalLocal);
     	$("#totalPuntosVisitante").html(totalVisitante);
 
+    	if (totalVisitante > totalLocal){
+    		$("#totalPuntosLocal").addClass("perdedor");
+    		$("#totalPuntosLocal").removeClass("ganador");
+
+    		$("#totalPuntosVisitante").addClass("ganador");
+    		$("#totalPuntosVisitante").removeClass("perdedor");
+    	}else if (totalVisitante < totalLocal){
+    		$("#totalPuntosLocal").addClass("ganador");
+    		$("#totalPuntosLocal").removeClass("perdedor");
+
+    		$("#totalPuntosVisitante").addClass("perdedor");
+    		$("#totalPuntosVisitante").removeClass("ganador");
+    	}else{
+    		$("#totalPuntosLocal").removeClass("ganador perdedor");
+    		$("#totalPuntosVisitante").removeClass("ganador perdedor");
+    	}
+
     	var equipoLocal = equipos[parseInt($("#localNombre").val())];
     	setEquipo(equipoLocal, "Local");
 
     	var equipoVisitante = equipos[parseInt($("#visitanteNombre").val())];
     	setEquipo(equipoVisitante, "Visitante");
+
 
     	var cmp = competiciones[parseInt($("#competicionNombre").val())];
 

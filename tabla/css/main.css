@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: Digital;
-    src: url(digital-7.ttf);
+    src: url(Withheld_Data.woff);
 }
 
 .tablita::before, .tablita::after {
@@ -22,15 +22,26 @@ html, body{
     padding: 2px 17px 2px 17px
 }
 
+#web{
+    color: white;
+    margin-top: 6px;
+    margin-left: 60px;
+    font-size: 17px;
+}
+
 #equipoLocal {
     background-image: url(../img/text-local-bg.png);
-    top: 95px;
+    top: 55px;
     position: absolute;
 }
 
 #escudoLocal{
     top: -65px;
     position: absolute;
+    display: flex;
+    align-items: center;
+    height: 180px;
+    margin-left: 20px;
 }
 
 #equipoLocal .nombreEquipo{
@@ -45,7 +56,7 @@ html, body{
 
 #equipoVisitante {
     background-image: url(../img/text-visit-bg.png);
-    top: 95px;
+    top: 55px;
     left: 766px;
     position: absolute;
 }
@@ -60,21 +71,31 @@ html, body{
     top: -65px;
     position: absolute;
     margin-left: 350px;
+    display: flex;
+    align-items: center;
+    height: 180px;
 }
 
 #competicion {
     /*background-image: url(../img/competiciones/snl.png);*/
     background-repeat: no-repeat;
     width: 193px;
-    height: 151px;
+    height: 131px;
     /*margin-left: 17px;
     margin-right: 17px;*/
     left: 50%;
     transform: translate(-50%, 0%);
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+#competicionLogo{
+    transform: translate(25%, 0%);
 }
 
 #nombres {
-    height: 155px;
+    height: 125px;
 }
 
 .heigth-66{
@@ -106,9 +127,11 @@ html, body{
 
 
 .numero{
-    font-family: Digital;
-    font-size: 87px;
+    font-family: arial;
+    font-size: 65px;
     color: white;
+    font-weight: bold;
+
 }
 
 .jugadores{
@@ -118,7 +141,7 @@ html, body{
 .jugadorLocal{
     background-image: url(../img/local2.png);
     background-repeat: no-repeat;
-    margin-left: 130px;
+    margin-left: 140px;
     margin-right: 50px;
 
 }
@@ -198,7 +221,7 @@ html, body{
 .penalizacionLocal{
     background-image: url(../img/pena_local.png);
     background-repeat: no-repeat;
-    margin-left: 122px;
+    margin-left: 132px;
     margin-right: 220px;
 
 }
@@ -261,7 +284,7 @@ html, body{
 .totalLocal{
     background-image: url(../img/total_local.png);
     background-repeat: no-repeat;
-    margin-left: 118px;
+    margin-left: 128px;
     margin-right: 52px;
 
 }
@@ -434,4 +457,12 @@ input[type=submit]:hover {
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 .w3-modal > .w3-modal-content > .w3-container > p {
   word-wrap: break-word;
+}
+
+.ganador{
+    color: green;
+}
+
+.perdedor{
+    color: orange;
 }
