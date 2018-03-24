@@ -38,6 +38,7 @@ var equipos = [
 	{"id":"BW", "nombre": "Black Wolves", "logo":"black_wolves.png", "size":"30px", "padding":"15px"},
 	{"id":"BS", "nombre": "Blue Shells", "logo":"Blue_Shells.png", "size":"30px", "padding":"15px"},
 	{"id":"CB", "nombre": "Champi Brothers", "logo":"Champi-Brothers.png", "size":"30px", "padding":"15px"},
+	{"id":"CK", "nombre": "Cool Karts", "logo":"cool_karts.png", "size":"30px", "padding":"15px"},
 	{"id":"Community", "nombre": "Community", "logo":"Community.png", "size":"30px", "padding":"15px"},
 	{"id":"DK", "nombre": "Dark Soldiers", "logo":"Dark_Soldiers.png", "size":"30px", "padding":"15px"},
 	{"id":"DC", "nombre": "Deluxe Cruisers", "logo":"Deluxe_Cruisers.png", "size":"30px", "padding":"15px"},
@@ -59,6 +60,7 @@ var equipos = [
 	{"id":"MT", "nombre": "Mushroom Team", "logo":"mtx.png", "size":"30px", "padding":"15px"},
 	{"id":"MT1", "nombre": "Mushroom Team X", "logo":"mtx.png", "size":"30px", "padding":"15px"},
 	{"id":"MT2", "nombre": "Mushroom Team Y", "logo":"mty.png", "size":"30px", "padding":"15px"},
+	{"id":"NK", "nombre": "Neo Karts", "logo":"neo_karts.jpg", "size":"30px", "padding":"15px"},
 	{"id":"N", "nombre": "Nightmare", "logo":"Nightmare.png", "size":"30px", "padding":"15px"},
 	{"id":"OB", "nombre": "Obvious Brilliance", "logo":"ob.png", "size":"30px", "padding":"15px"},
 	{"id":"PR", "nombre": "Pixel Rush", "logo":"PixelRush.png", "size":"30px", "padding":"15px"},
@@ -85,7 +87,7 @@ var equipos = [
 	{"id":"VR1", "nombre": "Victory Racers Esmerald", "logo":"VR1.png", "size":"24px", "padding":"21px"},
 	{"id":"VR2", "nombre": "Victory Racers Sapphire", "logo":"VR2.png", "size":"24px", "padding":"21px"},
 	{"id":"WEC", "nombre": "Wii Elite Clan", "logo":"wec.png", "size":"30px", "padding":"15px"},
-	{"id":"WW", "nombre": "Winner winner cuco dinner", "logo":"Winner_winner_cuco_dinner.png", "size":"21px", "padding":"24px"},
+	{"id":"WW", "nombre": "Winner winner cuco dinner", "logo":"Winner_winner_cuco_dinner.png", "size":"21px", "padding":"2px"},
 	{"id":"WF", "nombre": "World Friend", "logo":"World_Friend.png", "size":"30px", "padding":"15px"},
 	{"id":"YF", "nombre": "Yoshi Family", "logo":"yoshi_family.png", "size":"30px", "padding":"15px"},
 	{"id":"Z", "nombre": "Zealous", "logo":"Zealous.png", "size":"30px", "padding":"15px"},
@@ -99,8 +101,10 @@ function downloadCanvas(canvasId, filename) {
  
     // Utilizando la función html2canvas para hacer la conversión
     html2canvas(domElement).then(function(domElementCanvas) {
+
+    		download(domElementCanvas.toDataURL("image/png"), "image.png", "image/png");
             // Obteniendo el contexto del canvas ya generado
-            var context = domElementCanvas.getContext('2d');
+            /*var context = domElementCanvas.getContext('2d');
  
             // Creando enlace para descargar la imagen generada
             var link = document.createElement('a');
@@ -119,7 +123,7 @@ function downloadCanvas(canvasId, filename) {
             } else {
                 // Simulando clic para descargar
                 link.click();
-            }
+            }*/
         }
   	);
 }
