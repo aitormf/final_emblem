@@ -20,6 +20,8 @@ window.onclick = function(event) {
 }
 
 
+memoria={"local":"LocalSelect", "visitante":"VisitanteSelect"};
+
 var competiciones = [
 	{"id":"Amistosa", "nombre": "Amistosa","logo":"vs.png"},
 	{"id":"MKU", "nombre": "MKU", "logo":"universal.png"},
@@ -93,7 +95,43 @@ var equipos = [
 	{"id":"Z", "nombre": "Zealous", "logo":"Zealous.png", "size":"30px", "padding":"15px"},
 ];
 
+function openLocalTeam(typeName, variable) {
+    var i;
+    var x = document.getElementsByClassName("localTeam");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    document.getElementById(typeName).style.display = "block";
+    memoria[variable] = typeName;
 
+    console.log(variable+":"+memoria[variable]);
+}
+
+function openVisitTeam(typeName, variable) {
+    var i;
+    var x = document.getElementsByClassName("visitTeam");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    document.getElementById(typeName).style.display = "block";
+    memoria[variable] = typeName;
+
+    console.log(variable+":"+memoria[variable]);
+}
+
+function previewFile(selectorImg, selectorFile) {
+  var preview = document.querySelector(selectorImg);
+  var file    = document.querySelector(selectorFile).files[0];
+  var reader  = new FileReader();
+
+  reader.addEventListener("load", function () {
+    preview.src = reader.result;
+  }, false);
+
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+}
 
 function downloadCanvas(canvasId, filename) {
     // Obteniendo la etiqueta la cual se desea convertir en imagen
@@ -158,9 +196,34 @@ var getJugadores = function(prefix){
 		idNombre = prefix+i+"Nombre"
 		idPuntos = prefix+i+"Puntos"
 		nombre = $(idNombre).val();
-		puntos = $(idPuntos).val();
-    	jugadores[i]={"nombre":nombre,"puntos":puntos};
+		puntos = parseInt($(idPuntos).val());
+    	jugadores[i]={"nombre":nombre,"puntos":puntos, "mvp":false};
 	}
+	return jugadores;
+
+}
+
+var getMvp= function(jugadores){
+	mvp = 0;
+	for (i=1; i < jugadores.locales.length; i++){
+		if (jugadores.locales[i].puntos > mvp){
+			mvp = jugadores.locales[i].puntos;
+		}
+		if (jugadores.visitantes[i].puntos > mvp){
+			mvp = jugadores.visitantes[i].puntos;
+		}
+	}
+
+	for (i=1; i < jugadores.locales.length; i++){
+		if (jugadores.locales[i].puntos == mvp){
+			jugadores.locales[i].mvp = true;
+		}
+		if (jugadores.visitantes[i].puntos == mvp){
+			mvp = jugadores.visitantes[i];
+			jugadores.visitantes[i].mvp = true;
+		}
+	}
+
 	return jugadores;
 
 }
@@ -189,8 +252,16 @@ var setJugadores = function (jugadores, prefix){
 	for (i=1; i < jugadores.length; i++){
 		idNombre = "#jugador"+i+prefix+ " .nombre";
 		idpuntos = "#jugador"+i+prefix+ " .puntos";
+		idMvp = "#jugador"+i+prefix+ " .mvp";
 		$(idNombre).html(jugadores[i].nombre);
 		$(idpuntos).html(jugadores[i].puntos);
+		if (jugadores[i].mvp){
+			$(idMvp).removeClass("hidden");
+			console.log(idMvp +": "+ jugadores[i].mvp);
+		}else{
+			$(idMvp).addClass("hidden");
+			console.log(idMvp +": "+ jugadores[i].mvp);
+		}
 	}
 }
 
@@ -213,9 +284,14 @@ $(document).ready(function(){
 	crearCompeticiones();
     $("#save").click (function (event) {
     	var jugadores = getTabJugadores();
+    	jugadores = getMvp(jugadores);
+
+    	console.log(jugadores);
 
     	var totalLocal = calcTotal(jugadores.locales);
     	var totalVisitante = calcTotal(jugadores.visitantes);
+
+
 
     	setJugadores(jugadores.locales, "Local");
     	setJugadores(jugadores.visitantes, "Visitante");
@@ -240,11 +316,24 @@ $(document).ready(function(){
     		$("#totalPuntosVisitante").removeClass("ganador perdedor");
     	}
 
-    	var equipoLocal = equipos[parseInt($("#localNombre").val())];
-    	setEquipo(equipoLocal, "Local");
+    	if (memoria["visitante"] == "VisitanteSelect"){
+    		var equipoVisitante = equipos[parseInt($("#visitanteNombre").val())];
+    		setEquipo(equipoVisitante, "Visitante");
+    	}else if (memoria["visitante"] == "VisitantePerson"){
+    		$("#nombreVisitante").html($("#visitanteNombrePer").val());
+    		previewFile('#escudoVisitanteImg', '#visitanteFilePer')
 
-    	var equipoVisitante = equipos[parseInt($("#visitanteNombre").val())];
-    	setEquipo(equipoVisitante, "Visitante");
+    	}
+
+    	if (memoria["local"] == "LocalSelect"){
+    		var equipoLocal = equipos[parseInt($("#localNombre").val())];
+    		setEquipo(equipoLocal, "Local");
+    	}else if (memoria["local"] == "LocalPerson"){
+    		$("#nombreLocal").html($("#localNombrePer").val());
+    		previewFile('#escudoLocalImg', '#localFilePer');
+    	}
+
+    	
 
 
     	var cmp = competiciones[parseInt($("#competicionNombre").val())];

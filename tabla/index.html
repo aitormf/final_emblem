@@ -30,30 +30,30 @@
   <!-- 1 -->
   <div class="fila jugadores" id="jugadores1">
     <div id="jugador1Local" class="jugadorLocal jugador col">
-     <div class="numero col vertical-top">1</div><div class="nombre col vertical-top">Kasillas77</div><div class="puntos col vertical-top">000</div>
-    </div><div id="jugador1Visitante" class="jugadorVisitante jugador col"><div class="puntos col">0</div><div class="nombre col">Kasillas77</div><div class="numero col">1</div></div>
+     <div class="numero col">1</div><div class="nombre col">Kasillas77</div><div class="mvp hidden col">MVP</div><div class="puntos col">000</div>
+    </div><div id="jugador1Visitante" class="jugadorVisitante jugador col"><div class="puntos col">0</div><div class="mvp hidden col">MVP</div><div class="nombre col">Kasillas77</div><div class="numero col">1</div></div>
   </div>
   <!-- 2 -->
   <div class="fila jugadores" id="jugadores2">
   	<div id="jugador2Local" class="jugadorLocal jugador col">
-     <div class="numero col">2</div><div class="nombre col">Kasillas77</div><div class="puntos col">000</div>
-    </div><div id="jugador2Visitante" class="jugadorVisitante jugador col"><div class="puntos col">0</div><div class="nombre col">Kasillas77</div><div class="numero col">2</div></div>
+     <div class="numero col">2</div><div class="nombre col">Kasillas77</div><div class="mvp hidden col">MVP</div><div class="puntos col">000</div>
+    </div><div id="jugador2Visitante" class="jugadorVisitante jugador col"><div class="puntos col">0</div><div class="mvp hidden col">MVP</div><div class="nombre col">Kasillas77</div><div class="numero col">2</div></div>
   </div>
   <!-- 3 -->
   <div class="fila jugadores" id="jugadores3">
-  	<div id="jugador3Local" class="jugadorLocal jugador col"><div class="numero col">3</div><div class="nombre col">Kasillas77</div><div class="puntos col">000</div></div><div id="jugador3Visitante" class="jugadorVisitante jugador col"><div class="puntos col">0</div><div class="nombre col">Kasillas77</div><div class="numero col">3</div></div>
+  	<div id="jugador3Local" class="jugadorLocal jugador col"><div class="numero col">3</div><div class="nombre col">Kasillas77</div><div class="mvp hidden col">MVP</div><div class="puntos col">000</div></div><div id="jugador3Visitante" class="jugadorVisitante jugador col"><div class="puntos col">0</div><div class="mvp hidden col">MVP</div><div class="nombre col">Kasillas77</div><div class="numero col">3</div></div>
   </div>
   <!-- 4 -->
   <div class="fila  jugadores" id="jugadores4">
-  	<div id="jugador4Local" class="jugadorLocal jugador col"><div class="numero col">4</div><div class="nombre col">Kasillas77</div><div class="puntos col">000</div></div><div id="jugador4Visitante" class="jugadorVisitante jugador col"><div class="puntos col">0</div><div class="nombre col">Kasillas77</div><div class="numero col">4</div></div>
+  	<div id="jugador4Local" class="jugadorLocal jugador col"><div class="numero col">4</div><div class="nombre col">Kasillas77</div><div class="mvp hidden col">MVP</div><div class="puntos col">000</div></div><div id="jugador4Visitante" class="jugadorVisitante jugador col"><div class="puntos col">0</div><div class="mvp hidden col">MVP</div><div class="nombre col">Kasillas77</div><div class="numero col">4</div></div>
   </div>
   <!-- 5 -->
   <div class="fila jugadores" id="jugadores5">
-  	<div id="jugador5Local" class="jugadorLocal jugador col"><div class="numero col">5</div><div class="nombre col">Kasillas77</div><div class="puntos col">000</div></div><div id="jugador5Visitante" class="jugadorVisitante jugador col"><div class="puntos col">0</div><div class="nombre col">Kasillas77</div><div class="numero col">5</div></div>
+  	<div id="jugador5Local" class="jugadorLocal jugador col"><div class="numero col">5</div><div class="nombre col">Kasillas77</div><div class="mvp hidden col">MVP</div><div class="puntos col">000</div></div><div id="jugador5Visitante" class="jugadorVisitante jugador col"><div class="puntos col">0</div><div class="mvp hidden col">MVP</div><div class="nombre col">Kasillas77</div><div class="numero col">5</div></div>
   </div>
   <!-- 6 -->
   <div class="fila jugadores" id="jugadores6">
-  	<div id="jugador6Local" class="jugadorLocal jugador col"><div class="numero col">6</div><div class="nombre col">Kasillas77</div><div class="puntos col">000</div></div><div id="jugador6Visitante" class="jugadorVisitante jugador col"><div class="puntos col">0</div><div class="nombre col">Kasillas77</div><div class="numero col">6</div></div>
+  	<div id="jugador6Local" class="jugadorLocal jugador col"><div class="numero col">6</div><div class="nombre col">Kasillas77</div><div class="mvp hidden col">MVP</div><div class="puntos col">000</div></div><div id="jugador6Visitante" class="jugadorVisitante jugador col"><div class="puntos col">0</div><div class="mvp hidden col">MVP</div><div class="nombre col">Kasillas77</div><div class="numero col">6</div></div>
   </div>
   <!-- penalizaciones -->
   <div class="fila penalizaciones " id="penalizacion">
@@ -94,8 +94,19 @@
     		</select>
       	<h3> Equipo Local </h3>
       	<!--<input  id="localNombre" type="text" placeholder="Nombre">-->
-      	<select id="localNombre" class="idEquipos">
-    		</select>
+      	<div class="w3-bar w3-black">
+		  <button class="w3-bar-item w3-button" onclick="openLocalTeam('LocalSelect', 'local')">Lista</button>
+		  <button class="w3-bar-item w3-button" onclick="openLocalTeam('LocalPerson', 'local')">Personalizado</button>
+		</div> 
+		<div id="LocalSelect" class="localTeam">
+			<select id="localNombre" class="idEquipos"></select>
+		</div>
+
+		<div id="LocalPerson" class="localTeam" style="display:none">
+	  		<input  id="localNombrePer" type="text" placeholder="Nombre Equipo">
+	  		<input id="localFilePer" type="file"><br>
+		</div>
+      	
        <table style="width:100%">
 				  <tr>
 				    <td class = "col-5">1</td>
@@ -137,8 +148,19 @@
 				<input  id="localPenalizacion" type="number" placeholder="Penalización">
 
 				<h3> Equipo Visitante </h3>
-				<select id="visitanteNombre" class="idEquipos">
-    		</select>
+				 <div class="w3-bar w3-black">
+				  <button class="w3-bar-item w3-button" onclick="openVisitTeam('VisitanteSelect', 'visitante')">Lista</button>
+				  <button class="w3-bar-item w3-button" onclick="openVisitTeam('VisitantePerson', 'visitante')">Personalizado</button>
+				</div> 
+				<div id="VisitanteSelect" class="visitTeam">
+					<select id="visitanteNombre" class="idEquipos"></select>
+				</div>
+
+				<div id="VisitantePerson" class="visitTeam" style="display:none">
+			  		<input  id="visitanteNombrePer" type="text" placeholder="Nombre Equipo">
+			  		<input id="visitanteFilePer" type="file"><br>
+				</div>
+				
        <table style="width:100%">
 				  <tr>
 				    <td class = "col-5">1</td>

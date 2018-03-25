@@ -140,6 +140,18 @@ html, body{
     height: 71px;
 }
 
+.mvp{
+    padding-top: 20px;
+    font-size: 25px;
+    color: gold;
+    font-weight: bold;
+    
+}
+
+.hidden{
+    visibility: hidden;
+}
+
 .jugadorLocal{
     background-image: url(../img/local2.png);
     background-repeat: no-repeat;
@@ -167,7 +179,7 @@ html, body{
 .jugadorLocal .nombre{
     height: 100%;
     padding-left: 35px;
-    width: 66%;
+    width: 53%;
 
 }
 .jugadorLocal .puntos{
@@ -206,7 +218,7 @@ html, body{
 .jugadorVisitante .nombre{
     height: 100%;
     padding-right: 35px;
-    width: 68%;
+    width: 54%;
     text-align: right;
 
 }
