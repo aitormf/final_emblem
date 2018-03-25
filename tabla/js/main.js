@@ -206,20 +206,19 @@ var getJugadores = function(prefix){
 var getMvp= function(jugadores){
 	mvp = 0;
 	for (i=1; i < jugadores.locales.length; i++){
-		if (jugadores.locales[i].puntos > mvp){
-			mvp = jugadores.locales[i].puntos;
+		if (parseInt(jugadores.locales[i].puntos) > mvp){
+			mvp = parseInt(jugadores.locales[i].puntos);
 		}
-		if (jugadores.visitantes[i].puntos > mvp){
-			mvp = jugadores.visitantes[i].puntos;
+		if (parseInt(jugadores.visitantes[i].puntos) > mvp){
+			mvp = parseInt(jugadores.visitantes[i].puntos);
 		}
 	}
 
 	for (i=1; i < jugadores.locales.length; i++){
-		if (jugadores.locales[i].puntos == mvp){
+		if (parseInt(jugadores.locales[i].puntos) == mvp){
 			jugadores.locales[i].mvp = true;
 		}
-		if (jugadores.visitantes[i].puntos == mvp){
-			mvp = jugadores.visitantes[i];
+		if (parseInt(jugadores.visitantes[i].puntos) == mvp){
 			jugadores.visitantes[i].mvp = true;
 		}
 	}
@@ -258,11 +257,8 @@ var setJugadores = function (jugadores, prefix){
 		if (jugadores[i].mvp){
 			$(idMvp).css(" visibility", "visible");
 			$(idMvp).removeClass("hidden");
-			console.log(idMvp +": "+ jugadores[i].mvp);
-			$(idNombre).css("color", "gold");
 		}else{
 			$(idMvp).addClass("hidden");
-			console.log(idMvp +": "+ jugadores[i].mvp);
 		}
 	}
 }
