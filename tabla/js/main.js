@@ -196,7 +196,7 @@ var getJugadores = function(prefix){
 		idNombre = prefix+i+"Nombre"
 		idPuntos = prefix+i+"Puntos"
 		nombre = $(idNombre).val();
-		puntos = parseInt($(idPuntos).val());
+		puntos = $(idPuntos).val();
     	jugadores[i]={"nombre":nombre,"puntos":puntos, "mvp":false};
 	}
 	return jugadores;
@@ -256,8 +256,10 @@ var setJugadores = function (jugadores, prefix){
 		$(idNombre).html(jugadores[i].nombre);
 		$(idpuntos).html(jugadores[i].puntos);
 		if (jugadores[i].mvp){
+			$(idMvp).css(" visibility", "visible");
 			$(idMvp).removeClass("hidden");
 			console.log(idMvp +": "+ jugadores[i].mvp);
+			$(idNombre).css("color", "gold");
 		}else{
 			$(idMvp).addClass("hidden");
 			console.log(idMvp +": "+ jugadores[i].mvp);
