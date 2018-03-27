@@ -124,6 +124,8 @@ function previewFile(selectorImg, selectorFile) {
   var file    = document.querySelector(selectorFile).files[0];
   var reader  = new FileReader();
 
+  preview.src = "img/equipos/none2.png";
+
   reader.addEventListener("load", function () {
     preview.src = reader.result;
   }, false);
