@@ -8,6 +8,13 @@
     src: url(Withheld_Data.woff);
 }
 
+@font-face {
+    font-family: SF;
+    src: url(fighting_spirit_PG_ital.ttf);
+}
+
+
+
 .tablita::before, .tablita::after {
     box-sizing: content-box;
 }
@@ -123,25 +130,26 @@ html, body{
 }
 
 .jugador{
-     height: 71px;
+     height: 100%;
      width: 459px;
 }
 
 
 .numero{
     font-family: arial;
-    font-size: 65px;
+    font-size: 55px;
     color: white;
     font-weight: bold;
 
 }
 
 .jugadores{
-    height: 71px;
+    height: 60px;
+    margin-bottom: 3px;
 }
 
 .mvp{
-    padding-top: 20px;
+    padding-top: 15px;
     font-size: 25px;
     color: gold;
     font-weight: bold;
@@ -170,7 +178,7 @@ html, body{
 }
 
 .nombre{
-    padding-top: 20px;
+    padding-top: 15px;
     font-size: 25px;
     color: white;
     font-weight: bold;
@@ -189,7 +197,7 @@ html, body{
 }
 
 .puntos{
-    padding-top: 20px;
+    padding-top: 15px;
     font-size: 25px;
     color: white;
     font-weight: bold;
@@ -226,10 +234,12 @@ html, body{
 
 
 .penalizaciones{
-    height: 59px;
+    height: 45px;
+    margin-bottom: 3px;
+
 }
 .penalizacion{
-    height: 59px;
+    height: 100%;
      width: 381px;
 }
 .penalizacionLocal{
@@ -245,14 +255,14 @@ html, body{
     font-size: 30px;
     color: white;
     font-weight: bold;
-    padding-top: 15px;
+    padding-top: 6px;
 }
 
 .penalizacion_puntos{
     font-size: 26px;
     color: white;
     font-weight: bold;
-    padding-top: 15px;
+    padding-top: 5px;
 }
 
 .penalizacionLocal .penalizacion_nombre{
@@ -289,23 +299,60 @@ html, body{
 
 
 .totales{
-    height: 59px;
+    height: 115px;
 }
 .total{
     height: 71px;
-     width: 469px;
+     width: 416px;
 }
 .totalLocal{
-    background-image: url(../img/total_local.png);
+    background-image: url(../img/total_local2.png);
     background-repeat: no-repeat;
     margin-left: 128px;
-    margin-right: 52px;
+    margin-right: 22px;
 
 }
 
+.win_img{
+     z-index: 3;
+     position: relative;
+     top: -30px;
+    width: 250px;
+}
+.win_img_local{
+    margin-left: 250px;
+}
+
+.win_img_visit{
+    margin-left: 230px;
+}
+
+
 .totalVisitante{
-    background-image: url(../img/total_visit.png);
+    background-image: url(../img/total_visit2.png);
     background-repeat: no-repeat;
+}
+
+.diferencia{
+    background-image: url(../img/diferencia2.png);
+    background-repeat: no-repeat;
+    width: 110px;
+    height: 100%;
+    margin-right: 26px;
+    margin-top:20px;
+}
+
+.diferencia_puntos{
+    width: 100%;
+    text-align: center;
+}
+
+.diferencia_nombre{
+    margin-top: 18px;
+    color: white;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 22px;
 }
 
 .total_nombre{
@@ -317,19 +364,21 @@ html, body{
 }
 
 .totalLocal .total_nombre{
-    padding-left: 50px;
+    padding-left: 27px;
     width: 70%;
 
 }
 
 .total_puntos{
-    padding-top: 9px;
+    padding-top: 3px;
     font-size: 50px;
     color: white;
     font-weight: bold;
     
     
 }
+
+
 
 .totalLocal .total_puntos{
    text-align: right;
@@ -339,13 +388,17 @@ html, body{
 
 .totalVisitante .total_puntos{
    padding-left: 15px;
-   width: 26%;
+   width: 40%;
 
 }
 
 .totalVisitante .total_nombre{
-    width: 64%;
+    width: 54%;
     text-align: right;
+}
+
+.wins{
+    font-family: SF;
 }
 
 

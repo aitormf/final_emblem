@@ -292,6 +292,8 @@ $(document).ready(function(){
     	var totalLocal = calcTotal(jugadores.locales);
     	var totalVisitante = calcTotal(jugadores.visitantes);
 
+    	var diferencia = totalLocal - totalVisitante;
+
 
 
     	setJugadores(jugadores.locales, "Local");
@@ -299,6 +301,7 @@ $(document).ready(function(){
     	
     	$("#totalPuntosLocal").html(totalLocal);
     	$("#totalPuntosVisitante").html(totalVisitante);
+    	$("#diferenciaPuntos").html(diferencia);
 
     	if (totalVisitante > totalLocal){
     		$("#totalPuntosLocal").addClass("perdedor");
@@ -306,15 +309,24 @@ $(document).ready(function(){
 
     		$("#totalPuntosVisitante").addClass("ganador");
     		$("#totalPuntosVisitante").removeClass("perdedor");
+
+    		/*$("#winLocal").attr("src", "img/YOULOSE2.png");
+    		$("#winVisit").attr("src", "img/YOUWIN.png");*/
     	}else if (totalVisitante < totalLocal){
     		$("#totalPuntosLocal").addClass("ganador");
     		$("#totalPuntosLocal").removeClass("perdedor");
+
+    		/*$("#winLocal").attr("src", "img/YOUWIN.png");
+    		$("#winVisit").attr("src", "img/YOULOSE2.png");*/
 
     		$("#totalPuntosVisitante").addClass("perdedor");
     		$("#totalPuntosVisitante").removeClass("ganador");
     	}else{
     		$("#totalPuntosLocal").removeClass("ganador perdedor");
     		$("#totalPuntosVisitante").removeClass("ganador perdedor");
+
+    		/*$("#winLocal").attr("src", "img/empate.png");
+    		$("#winVisit").attr("src", "img/empate.png");*/
     	}
 
     	if (memoria["visitante"] == "VisitanteSelect"){
