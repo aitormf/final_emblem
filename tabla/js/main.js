@@ -60,7 +60,7 @@ var equipos = [
 	{"id":"ID", "nombre": "Ink Drivers", "logo":"Ink_Drivers.png", "size":"30px", "padding":"15px"},
 	{"id":"JPP", "nombre": "Jean Pierre-Pernault", "logo":"jpp.png", "size":"28px", "padding":"17px"},
 	//{"id":"K", "nombre": "Koopas Atómicos", "logo":"koopas_atomicos.png", "size":"30px", "padding":"15px"},
-	{"id":"LA", "nombre": "Legens of the Apocalypsis", "logo":"legens_of_the_apocalipsis.jpg", "size":"22px", "padding":"23px"},
+	{"id":"LA", "nombre": "Legends of the Apocalypsis", "logo":"legends_of_the_apocalipsis.jpg", "size":"21px", "padding":"24px"},
 	{"id":"MS", "nombre": "Mandarina de Schrödinger", "logo":"MS.png", "size":"22px", "padding":"23px"},
 	{"id":"M", "nombre": "Merciless", "logo":"merciless.png", "size":"30px", "padding":"15px"},
 	{"id":"MKR", "nombre": "MKR", "logo":"MKR.png", "size":"30px", "padding":"15px"},
@@ -77,7 +77,7 @@ var equipos = [
 	{"id":"RR", "nombre": "RagnaЯöck", "logo":"RagnaЯöck.png", "size":"30px", "padding":"15px"},
 	{"id":"RF", "nombre": "Rainbow Fun", "logo":"rf.png", "size":"30px", "padding":"15px"},
 	{"id":"RG", "nombre": "Retro gamers", "logo":"none2.png", "size":"30px", "padding":"15px"},
-	{"id":"RG", "nombre": "Road Gods", "logo":"none2.png", "size":"30px", "padding":"15px"},
+	{"id":"RG", "nombre": "Road Gods", "logo":"rg.png", "size":"30px", "padding":"15px"},
 	{"id":"RK", "nombre": "Rozando la Katastrofe", "logo":"rk.png", "size":"25px", "padding":"20px"},
 	{"id":"RK2", "nombre": "Rozando la Kalamidad", "logo":"rk.png", "size":"25px", "padding":"20px"},
 	{"id":"RK3", "nombre": "Rozando el Kataclismo", "logo":"rk.png", "size":"25px", "padding":"20px"},
@@ -102,7 +102,7 @@ var equipos = [
 	{"id":"WW", "nombre": "Winner winner cuco dinner", "logo":"Winner_winner_cuco_dinner.png", "size":"21px", "padding":"2px"},
 	{"id":"WF", "nombre": "World Friend", "logo":"World_Friend.png", "size":"30px", "padding":"15px"},
 	{"id":"YF", "nombre": "Yoshi Family", "logo":"yoshi_family.png", "size":"30px", "padding":"15px"},
-	{"id":"ZS", "nombre": "Zapfish Squad", "logo":"none2.png", "size":"30px", "padding":"15px"},
+	{"id":"ZS", "nombre": "Zapfish Squad", "logo":"zapfish_squad.jpg", "size":"30px", "padding":"15px"},
 	{"id":"Z", "nombre": "Zealous", "logo":"Zealous.png", "size":"30px", "padding":"15px"},
 ];
 
