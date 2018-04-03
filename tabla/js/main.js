@@ -306,6 +306,7 @@ var setCompeticion= function(equipo, prefix){
 
 var setFondo = function (fondo){
 	$("#contenedor_tabla").css("background-image", "url(../img/fondos/"+ fondo +")");
+	console.log("url(../img/fondos/"+ fondo +")");
 }
 
 
