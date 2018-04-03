@@ -19,6 +19,15 @@ window.onclick = function(event) {
     }
 }
 
+var fondos = [
+	{"nombre": "basico", "img": "background.png"},
+	{"nombre": "Base Polar", "img": "base_polar.jpg"},
+	{"nombre": "Autopista Toad", "img": "autopista_toad.jpg"},
+	{"nombre": "Metro Campana", "img": "metro_campana.jpg"},
+	{"nombre": "Ruta Celeste", "img": "ruta_celeste.jpg"},
+	{"nombre": "Senda SNES", "img": "senda_snes.jpg"}
+];
+
 
 memoria={"local":"LocalSelect", "visitante":"VisitanteSelect"};
 
@@ -199,6 +208,13 @@ var crearCompeticiones = function(){
 	}
 }
 
+var rellenarSelect = function (id, lista){
+	for(i=0; i< lista.length; i++){
+
+		$( id ).append( '<option value="'+i+'">'+lista[i].nombre+'</option>' );
+	}
+};
+
 
 
 
@@ -288,11 +304,15 @@ var setCompeticion= function(equipo, prefix){
 	$("#escudo"+prefix+" img").attr("src", "img/equipos/"+equipo.logo);
 }
 
+var setFondo = function (fondo){
+	$("#contenedor_tabla").css("background-image", "url(../img/fondos/"+ fondo +")");
+}
+
 
 $(document).ready(function(){
-
-	crearEquipos();
-	crearCompeticiones();
+	rellenarSelect(".idEquipos" , equipos);
+	rellenarSelect("#competicionNombre" , competiciones);
+	rellenarSelect("#selectFondo" , fondos);
     $("#save").click (function (event) {
     	var jugadores = getTabJugadores();
     	jugadores = getMvp(jugadores);
@@ -361,11 +381,12 @@ $(document).ready(function(){
 
     	var cmp = competiciones[parseInt($("#competicionNombre").val())];
 
-    	console.log(cmp.logo);
-
     	$("#competicionLogo").attr("src", "img/competiciones/"+cmp.logo);
 
     	console.log($("#competicionLogo").attr("src"));
+
+    	var fond = fondos[parseInt($("#selectFondo").val())];
+    	setFondo(fond.img);
 
 
     	modal.style.display = "none";
