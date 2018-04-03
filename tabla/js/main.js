@@ -305,7 +305,7 @@ var setCompeticion= function(equipo, prefix){
 }
 
 var setFondo = function (fondo){
-	$("#contenedor_tabla").css("background-image", "url(img/fondos/"+ fondo +");");
+	$("#contenedor_tabla").css("background-image", "url(./img/fondos/"+ fondo +")");
 	console.log("url(../img/fondos/"+ fondo +")");
 }
 
@@ -317,8 +317,6 @@ $(document).ready(function(){
     $("#save").click (function (event) {
     	var jugadores = getTabJugadores();
     	jugadores = getMvp(jugadores);
-
-    	console.log(jugadores);
 
     	var totalLocal = calcTotal(jugadores.locales);
     	var totalVisitante = calcTotal(jugadores.visitantes);
@@ -384,7 +382,6 @@ $(document).ready(function(){
 
     	$("#competicionLogo").attr("src", "img/competiciones/"+cmp.logo);
 
-    	console.log($("#competicionLogo").attr("src"));
 
     	var fond = fondos[parseInt($("#selectFondo").val())];
     	setFondo(fond.img);
