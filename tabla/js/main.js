@@ -21,10 +21,9 @@ window.onclick = function(event) {
 
 var fondos = [
 	{"nombre": "basico", "img": "background.png"},
-	{"nombre": "Base Polar", "img": "base_polar.jpg"},
-	{"nombre": "Autopista Toad", "img": "autopista_toad.jpg"},
+	{"nombre": "Castillo Bowser", "img": "bowser.png"},
+	{"nombre": "Hyrule", "img": "hyrule.png"},
 	{"nombre": "Metro Campana", "img": "metro_campana.jpg"},
-	{"nombre": "Ruta Celeste", "img": "ruta_celeste.jpg"},
 	{"nombre": "Senda SNES", "img": "senda_snes.jpg"}
 ];
 
