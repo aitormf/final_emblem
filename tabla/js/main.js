@@ -24,7 +24,10 @@ var fondos = [
 	{"nombre": "Castillo Bowser", "img": "bowser.png"},
 	{"nombre": "Hyrule", "img": "hyrule.png"},
 	{"nombre": "Metro Campana", "img": "metro_campana.jpg"},
-	{"nombre": "Senda SNES", "img": "senda_snes.jpg"}
+	{"nombre": "Senda SNES", "img": "senda_snes.jpg"},
+	{"nombre": "Mario GBA", "img": "mario_gba.jpg"},
+	{"nombre": "Mansión", "img": "mansion.png"},
+	{"nombre": "Mute City", "img": "mute.jpg"}
 ];
 
 
