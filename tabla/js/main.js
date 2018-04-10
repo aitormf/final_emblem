@@ -223,35 +223,50 @@ var rellenarSelect = function (id, lista){
 
 var getJugadores = function(prefix){
 	jugadores = [{}];
-	jugadores[0].puntos = $(prefix+"Penalizacion").val();
+	players = {};
+	players.pen = $(prefix+"Penalizacion").val();
 	for (i = 1; i < 7; i++) {
 		idNombre = prefix+i+"Nombre"
 		idPuntos = prefix+i+"Puntos"
 		nombre = $(idNombre).val();
 		puntos = $(idPuntos).val();
-    	jugadores[i]={"nombre":nombre,"puntos":puntos, "mvp":false};
+    	jugadores[i-1]={"nombre":nombre,"puntos":puntos, "mvp":false};
 	}
-	return jugadores;
+	jugadores.sort(function (a, b){
+		var valA = 0;
+		var valB = 0;
+
+		if (a.puntos != ""){
+			valA = parseInt(a.puntos);
+		} 
+		if (b.puntos != ""){
+			valB = parseInt(b.puntos);
+		} 
+
+    	return (valB - valA)
+	});
+	players.jugadores = jugadores;
+	return players;
 
 }
 
 var getMvp= function(jugadores){
 	mvp = 0;
-	for (i=1; i < jugadores.locales.length; i++){
-		if (parseInt(jugadores.locales[i].puntos) > mvp){
-			mvp = parseInt(jugadores.locales[i].puntos);
+	for (i=0; i < jugadores.locales.jugadores.length; i++){
+		if (parseInt(jugadores.locales.jugadores[i].puntos) > mvp){
+			mvp = parseInt(jugadores.locales.jugadores[i].puntos);
 		}
-		if (parseInt(jugadores.visitantes[i].puntos) > mvp){
-			mvp = parseInt(jugadores.visitantes[i].puntos);
+		if (parseInt(jugadores.visitantes.jugadores[i].puntos) > mvp){
+			mvp = parseInt(jugadores.visitantes.jugadores[i].puntos);
 		}
 	}
 
-	for (i=1; i < jugadores.locales.length; i++){
-		if (parseInt(jugadores.locales[i].puntos) == mvp){
-			jugadores.locales[i].mvp = true;
+	for (i=0; i < jugadores.locales.jugadores.length; i++){
+		if (parseInt(jugadores.locales.jugadores[i].puntos) == mvp){
+			jugadores.locales.jugadores[i].mvp = true;
 		}
-		if (parseInt(jugadores.visitantes[i].puntos) == mvp){
-			jugadores.visitantes[i].mvp = true;
+		if (parseInt(jugadores.visitantes.jugadores[i].puntos) == mvp){
+			jugadores.visitantes.jugadores[i].mvp = true;
 		}
 	}
 
@@ -259,34 +274,39 @@ var getMvp= function(jugadores){
 
 }
 
-var getTabJugadores = function (){
-	var jugadores = {};
-	jugadores.locales = getJugadores("#local");
-	jugadores.visitantes = getJugadores("#visitante");
+var getTabla = function (){
+	var tabla = {};
+	tabla.locales = getJugadores("#local");
+	tabla.visitantes = getJugadores("#visitante");
 	 
-	return jugadores;
+	return tabla;
 
 }
 
 var calcTotal = function(jugadores){
 	var total = 0;
-	for (i=0; i < jugadores.length; i++){
-		if (jugadores[i].puntos != ""){
-			total += parseInt(jugadores[i].puntos);
+	for (i=0; i < jugadores.jugadores.length; i++){
+		if (jugadores.jugadores[i].puntos != ""){
+			total += parseInt(jugadores.jugadores[i].puntos);
 		}
 	}
-	return total
+	if (jugadores.pen != ""){
+			total += parseInt(jugadores.pen);
+	}
+	return total;
 }
 
 var setJugadores = function (jugadores, prefix){
-	$("#penalizacionPuntos"+prefix).html(jugadores[0].puntos);
-	for (i=1; i < jugadores.length; i++){
-		idNombre = "#jugador"+i+prefix+ " .nombre";
-		idpuntos = "#jugador"+i+prefix+ " .puntos";
-		idMvp = "#jugador"+i+prefix+ " .mvp";
-		$(idNombre).html(jugadores[i].nombre);
-		$(idpuntos).html(jugadores[i].puntos);
-		if (jugadores[i].mvp){
+	$("#penalizacionPuntos"+prefix).html(jugadores.pen);
+	for (i=0; i < jugadores.jugadores.length; i++){
+		var l = i+1;
+		console.log(l);
+		idNombre = "#jugador"+l+prefix+ " .nombre";
+		idpuntos = "#jugador"+l+prefix+ " .puntos";
+		idMvp = "#jugador"+l+prefix+ " .mvp";
+		$(idNombre).html(jugadores.jugadores[i].nombre);
+		$(idpuntos).html(jugadores.jugadores[i].puntos);
+		if (jugadores.jugadores[i].mvp){
 			$(idMvp).css(" visibility", "visible");
 			$(idMvp).removeClass("hidden");
 		}else{
@@ -318,18 +338,18 @@ $(document).ready(function(){
 	rellenarSelect("#competicionNombre" , competiciones);
 	rellenarSelect("#selectFondo" , fondos);
     $("#save").click (function (event) {
-    	var jugadores = getTabJugadores();
-    	jugadores = getMvp(jugadores);
+    	var tabla = getTabla();
+    	tabla = getMvp(tabla);
 
-    	var totalLocal = calcTotal(jugadores.locales);
-    	var totalVisitante = calcTotal(jugadores.visitantes);
+    	var totalLocal = calcTotal(tabla.locales);
+    	var totalVisitante = calcTotal(tabla.visitantes);
 
     	var diferencia = totalLocal - totalVisitante;
 
 
 
-    	setJugadores(jugadores.locales, "Local");
-    	setJugadores(jugadores.visitantes, "Visitante");
+    	setJugadores(tabla.locales, "Local");
+    	setJugadores(tabla.visitantes, "Visitante");
     	
     	$("#totalPuntosLocal").html(totalLocal);
     	$("#totalPuntosVisitante").html(totalVisitante);
