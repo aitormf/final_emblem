@@ -49,7 +49,7 @@ var equipos = [
 	{"id":"AG", "nombre": "Atenea Gamers", "logo":"atenea.png", "size":"30px", "padding":"15px"},
 	{"id":"Aurora", "nombre": "Aurora", "logo":"Aurora.png", "size":"30px", "padding":"15px"},
 	{"id":"BD", "nombre": "Baphomet's Dolls", "logo":"baphomets_dolls.png", "size":"30px", "padding":"15px"},
-	{"id":"BL", "nombre": "BannanaLegion", "logo":"BannanaLegion.png", "size":"30px", "padding":"15px"},
+	{"id":"BL", "nombre": "Banana Legion", "logo":"BannanaLegion.png", "size":"30px", "padding":"15px"},
 	{"id":"BW", "nombre": "Black Wolves", "logo":"black_wolves.png", "size":"30px", "padding":"15px"},
 	{"id":"BS", "nombre": "Blue Shells", "logo":"Blue_Shells.png", "size":"30px", "padding":"15px"},
 	{"id":"CB", "nombre": "Champi Brothers", "logo":"Champi-Brothers.png", "size":"30px", "padding":"15px"},
