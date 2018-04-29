@@ -121,6 +121,38 @@ var equipos = [
 	{"id":"Z", "nombre": "Zealous", "logo":"Zealous.png", "size":"30px", "padding":"15px"},
 ];
 
+maxTotales= [0, 1, 132, 264, 468, 696, 984]
+
+function calculoCorrecto(tvisit, tlocal, tabla){
+	var max = 0;
+	var maxTabla = 0;
+	if (tabla.locales.numJugadores > tabla.visitantes.numJugadores){
+		max = maxTotales[tabla.locales.numJugadores];
+	}else{
+		max = maxTotales[tabla.visitantes.numJugadores];
+	}
+
+	if (tabla.visitantes.pen != ""){
+			maxTabla -= parseInt(tabla.visitantes.pen);
+	}
+	if (tabla.locales.pen != ""){
+			maxTabla -= parseInt(tabla.locales.pen);
+	}
+
+	maxTabla = maxTabla  + tvisit+tlocal;
+
+
+
+	if (maxTabla < max){
+		return {res: false, mensaje: "Faltan " + (max - maxTabla) + " puntos"};
+	}
+	if (maxTabla > max){
+		return {res: false, mensaje: "Sobran " + (maxTabla - max) + " puntos"};
+	} 
+
+	return {res: true, mensaje: "correcto"};
+}
+
 function openLocalTeam(typeName, variable) {
     var i;
     var x = document.getElementsByClassName("localTeam");
@@ -248,6 +280,13 @@ var getJugadores = function(prefix){
 
     	return (valB - valA)
 	});
+	var njug = 0;
+	for (i = 0; i < jugadores.length; i++){
+		if (jugadores[i].puntos != ""){
+			njug ++;
+		}
+	}
+	players.numJugadores = njug;
 	players.jugadores = jugadores;
 	return players;
 
@@ -303,7 +342,6 @@ var setJugadores = function (jugadores, prefix){
 	$("#penalizacionPuntos"+prefix).html(jugadores.pen);
 	for (i=0; i < jugadores.jugadores.length; i++){
 		var l = i+1;
-		console.log(l);
 		idNombre = "#jugador"+l+prefix+ " .nombre";
 		idpuntos = "#jugador"+l+prefix+ " .puntos";
 		idMvp = "#jugador"+l+prefix+ " .mvp";
@@ -332,7 +370,6 @@ var setCompeticion= function(equipo, prefix){
 
 var setFondo = function (fondo){
 	$("#contenedor_tabla").css("background-image", "url(./img/fondos/"+ fondo +")");
-	console.log("url(../img/fondos/"+ fondo +")");
 }
 
 
@@ -344,7 +381,7 @@ $(document).ready(function(){
     	var tabla = getTabla();
     	tabla = getMvp(tabla);
 
-    	var totalLocal = calcTotal(tabla.locales);
+    	var totalLocal =calcTotal(tabla.locales);
     	var totalVisitante = calcTotal(tabla.visitantes);
 
     	var diferencia = totalLocal - totalVisitante;
@@ -412,8 +449,14 @@ $(document).ready(function(){
     	var fond = fondos[parseInt($("#selectFondo").val())];
     	setFondo(fond.img);
 
+    	var correcto = calculoCorrecto(totalLocal, totalVisitante, tabla)
+    	if (correcto.res){
+    		modal.style.display = "none";
+    	}else{
+    		alert(correcto.mensaje);
+    	}
 
-    	modal.style.display = "none";
+    	
 
     });
 
