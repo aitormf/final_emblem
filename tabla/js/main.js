@@ -30,7 +30,9 @@ var fondos = [
 	{"nombre": "Mansión", "img": "mansion.png"},
 	{"nombre": "Mute City", "img": "mute.jpg"},
 	{"nombre": "Xenoblade 1", "img": "xenoblade1.jpeg"},
-	{"nombre": "Xenoblade 2", "img": "xenoblade2.jpeg"}
+	{"nombre": "Xenoblade 2", "img": "xenoblade2.jpeg"},
+	{"nombre": "Zelda 1", "img": "zelda1.jpg"},
+	{"nombre": "Zelda 2", "img": "zelda2.jpg"},
 ];
 
 
