@@ -108,6 +108,7 @@ var equipos = [
 	{"id":"ST", "nombre": "Star Team", "logo":"star_team.png", "size":"30px", "padding":"15px"},
 	{"id":"TeamJBZZ", "nombre": "TeamJBZZ", "logo":"TeamJBZZ.png", "size":"30px", "padding":"15px"},
 	{"id":"TL", "nombre": "Team Luxembourg", "logo":"Team_Luxembourg.png", "size":"30px", "padding":"15px"},
+	{"id":"TR", "nombre": "Team Rocket","logo":"team_rocket.jpg", "size":"30px", "padding":"15px"},
 	{"id":"TDK", "nombre": "Tokyo Drift Kings", "logo":"Tokyo_Drift_Kings.png", "size":"30px", "padding":"15px"},
 	{"id":"TT", "nombre": "Tuéstame la tostada", "logo":"tt.png", "size":"28px", "padding":"17px"},
 	{"id":"UU", "nombre": "Unbeatable Underdogs", "logo":"uu.png", "size":"25px", "padding":"20px"},
