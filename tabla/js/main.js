@@ -40,6 +40,7 @@ memoria={"local":"LocalSelect", "visitante":"VisitanteSelect"};
 
 var competiciones = [
 	{"id":"Amistosa", "nombre": "Amistosa","logo":"vs.png"},
+	{"id":"MKC", "nombre": "MKC", "logo":"mkc.png"},
 	{"id":"MKU", "nombre": "MKU", "logo":"universal.png"},
 	{"id":"SNL", "nombre": "SNL", "logo":"snl.png"}
 ];
