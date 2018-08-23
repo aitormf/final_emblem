@@ -29,6 +29,7 @@ var fondos = [
 	{"nombre": "Mario GBA", "img": "mario_gba.jpg"},
 	{"nombre": "Mansión", "img": "mansion.png"},
 	{"nombre": "Mute City", "img": "mute.jpg"},
+	{"nombre": "Reloj Tic Tac", "img": "reloj.jpg"},
 	{"nombre": "Xenoblade 1", "img": "xenoblade1.jpeg"},
 	{"nombre": "Xenoblade 2", "img": "xenoblade2.jpeg"},
 	{"nombre": "Zelda 1", "img": "zelda1.jpg"},
