@@ -277,7 +277,7 @@ var getJugadores = function(prefix){
 		nombre = $(idNombre).val();
 		puntos = 0;
 		puntosstr=$(idPuntos).val();
-		if (puntosstr.include("+")){
+		if (puntosstr.includes("+")){
 		   res = puntosstr.split("+");
 		   for (i = 0; i < jugadores.length; i++){
 			   puntos += parseInt(res[i]);
