@@ -67,7 +67,7 @@ var equipos = [
 	//{"id":"DK", "nombre": "Dark Soldiers", "logo":"Dark_Soldiers.png", "size":"30px", "padding":"15px"},
 	{"id":"DC", "nombre": "Deluxe Cruisers", "logo":"Deluxe_Cruisers.png", "size":"30px", "padding":"15px"},
 	{"id":"DS", "nombre": "Deluxe of Switchss", "logo":"Deluxe_of_Switchs.png", "size":"30px", "padding":"15px"},
-	{"id":"D", "nombre": "Ðynamite", "logo":"Dynamite.png", "size":"30px", "padding":"15px"},
+	{"id":"D", "nombre": "Ðynamite", "logo":"Dynamite.jpg", "size":"30px", "padding":"15px"},
 	{"id":"E", "nombre": "Elegance", "logo":"none2.png", "size":"30px", "padding":"15px"},
 	{"id":"FA", "nombre": "Fatal Aces", "logo":"FatalAces.png", "size":"30px", "padding":"15px"},
 	{"id":"FDP", "nombre": "Frères de poulpe", "logo":"Freres_de_poulpe.png", "size":"30px", "padding":"15px"},
@@ -275,7 +275,14 @@ var getJugadores = function(prefix){
 		idNombre = prefix+i+"Nombre"
 		idPuntos = prefix+i+"Puntos"
 		nombre = $(idNombre).val();
-		puntos = $(idPuntos).val();
+		puntos = 0;
+		puntosstr=$(idPuntos).val();
+		if (puntosstr.include("+")){
+		   res = puntosstr.split("+");
+		   for (i = 0; i < jugadores.length; i++){
+			   puntos += parseInt(res[i]);
+		   }
+		}
     	jugadores[i-1]={"nombre":nombre,"puntos":puntos, "mvp":false};
 	}
 	jugadores.sort(function (a, b){
