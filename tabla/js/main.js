@@ -282,6 +282,8 @@ var getJugadores = function(prefix){
 		   for (i = 0; i < jugadores.length; i++){
 			   puntos += parseInt(res[i]);
 		   }
+		}else{
+		  puntos = puntosstr;
 		}
     	jugadores[i-1]={"nombre":nombre,"puntos":puntos, "mvp":false};
 	}
